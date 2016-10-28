@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="PATH" elementType="Argument">
+            <stringProp name="Argument.name">PATH</stringProp>
+            <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}${__BeanShell(File.separator,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ENVIRONMENT" elementType="Argument">
+            <stringProp name="Argument.name">ENVIRONMENT</stringProp>
+            <stringProp name="Argument.value">Window</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="URL" elementType="Argument">
+            <stringProp name="Argument.name">URL</stringProp>
+            <stringProp name="Argument.value">https://nahi.vn</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="Chrome Driver Config" enabled="true">
+        <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+        <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+        <stringProp name="WebDriverConfig.http_host"></stringProp>
+        <intProp name="WebDriverConfig.http_port">8080</intProp>
+        <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+        <stringProp name="WebDriverConfig.https_host"></stringProp>
+        <intProp name="WebDriverConfig.https_port">8080</intProp>
+        <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+        <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+        <stringProp name="WebDriverConfig.socks_host"></stringProp>
+        <intProp name="WebDriverConfig.socks_port">8080</intProp>
+        <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+        <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+        <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+        <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+        <stringProp name="ChromeDriverConfig.chromedriver_path">${PATH}..${__BeanShell(File.separator,)}..${__BeanShell(File.separator,)}webdriver${__BeanShell(File.separator,)}chromedriver.exe</stringProp>
+        <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+      </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+      <hashTree/>
+      <com.googlecode.jmeter.plugins.webdriver.config.FirefoxDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.FirefoxDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.FirefoxDriverConfig" testname="Firefox Driver Config" enabled="false">
+        <stringProp name="WebDriverConfig.proxy_type">AUTO_DETECT</stringProp>
+        <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+        <stringProp name="WebDriverConfig.http_host">10.10.10.10</stringProp>
+        <intProp name="WebDriverConfig.http_port">8080</intProp>
+        <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+        <stringProp name="WebDriverConfig.https_host"></stringProp>
+        <intProp name="WebDriverConfig.https_port">8080</intProp>
+        <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+        <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+        <stringProp name="WebDriverConfig.socks_host"></stringProp>
+        <intProp name="WebDriverConfig.socks_port">8080</intProp>
+        <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+        <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+        <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+        <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+        <boolProp name="FirefoxDriverConfig.general.useragent.override.enabled">false</boolProp>
+        <boolProp name="FirefoxDriverConfig.network.negotiate-auth.allow-insecure-ntlm-v1">false</boolProp>
+        <collectionProp name="FirefoxDriverConfig.general.extensions"/>
+        <collectionProp name="FirefoxDriverConfig.general.preferences"/>
+        <stringProp name="TestPlan.comments">/*
+ *
+ * check Selenium Webdriver version: https://raw.githubusercontent.com/SeleniumHQ/selenium/master/java/CHANGELOG
+ * check which version of Webdriver plugins is using
+ *
+ */</stringProp>
+      </com.googlecode.jmeter.plugins.webdriver.config.FirefoxDriverConfig>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup: Main Actions Before" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1467020996000</longProp>
+        <longProp name="ThreadGroup.end_time">1467020996000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="PRE - EXC - Preparing..." enabled="true">
+          <stringProp name="BeanShellSampler.query">import org.apache.commons.io.FileUtils;
+import org.apache.jmeter.services.FileServer;
+
+String projectPath	= vars.get(&quot;PATH&quot;);						// get current path of .JMX file
+String parentPath	= projectPath + &quot;..&quot; + File.separator + &quot;..&quot; + File.separator; // get path of FRAMEWORK folder
+
+String jsPath		= parentPath + &quot;js&quot; + File.separator;		//path to JS folder of FRAMEWORK
+String dataPath	= projectPath + &quot;data&quot; + File.separator;	//path to DATA folder of PROJECT
+String referPath	= projectPath + &quot;references&quot; + File.separator;	//path to REFER folder of PROJECT
+String reportPath	= projectPath + &quot;report&quot; + File.separator;	//path to REPORT folder of PROJECT
+
+props.put(&quot;PARENT_PATH&quot;, parentPath);
+props.put(&quot;JS_PATH&quot;	   , jsPath);							//store into JS_PATH property for each Webdriver Sampler
+props.put(&quot;DATA_PATH&quot;  , dataPath);						//store into DATA_PATH property for &quot;Loading Data from File&quot;
+props.put(&quot;REFER_PATH&quot; , referPath);
+props.put(&quot;REPORT_PATH&quot;, reportPath);
+
+String templatePath = parentPath + &quot;templates&quot; + File.separator + &quot;template.html&quot;;	//path to TEMPLATE folder of FRAMEWORK
+String report	 	= FileUtils.readFileToString(new File(templatePath));			//read report file from TEMPLATE folder 
+
+String date		= &quot;&quot;;								//prepare date for saving name of report
+props.put(&quot;DATE&quot;  , date);								//store into DATE property for generating report&apos;s name
+
+props.put(&quot;REPORT&quot;, report);								//store into REPORT property for &quot;Generate the report&quot;
+props.put(&quot;THREAD_NAME&quot;, &quot;&quot;);</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <BSFSampler guiclass="TestBeanGUI" testclass="BSFSampler" testname="PRE - EXC - Loading Data from File" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">${__FileToString(${__P(DATA_PATH,)}data.js,,)}
+${__FileToString(${__P(DATA_PATH,)}xpath.js,,)}
+
+props.put(&quot;DATA&quot;  ,data);
+props.put(&quot;XPATH&quot; ,xpath);</stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </BSFSampler>
+        <hashTree/>
+        <BSFSampler guiclass="TestBeanGUI" testclass="BSFSampler" testname="Loading Data from Excel File" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">/*
+ * 
+ * 
+ * ????????????? How to do that?
+ * 
+ * 
+ */</stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </BSFSampler>
+        <hashTree/>
+        <BSFSampler guiclass="TestBeanGUI" testclass="BSFSampler" testname="Loading Data from CSV File" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">//we have to retrieve the utils from vars
+${__FileToString(${__P(JS_PATH,)}utils.js,,)}
+var utils = props.get(&apos;utils&apos;);
+utils.load([&apos;papaparse.min&apos;]);//or utils.load(&apos;papaparse.min&apos;);
+
+var FileUtils 	= org.apache.commons.io.FileUtils;
+var File		= java.io.File;
+var FileServer	= org.apache.jmeter.services.FileServer;
+var path 		= FileServer.getFileServer().getBaseDir() + File.separator + &apos;data&apos; + File.separator +&apos;data.csv&apos;
+var csvString	= FileUtils.readFileToString(new File(path), &quot;UTF-8&quot;);
+
+//now we can use papaparsejs functions: http://papaparse.com/docs
+var array = Papa.parse(String(csvString),  {
+	header		: true,
+	skipEmptyLines	: true,
+});
+
+log.info(JSON.stringify(array));
+
+var data 	= {};
+var xpath = {};
+
+for (i = 0; i &lt; array.data.length; i ++) {
+	data  [array.data[i].Key] 	= array.data[i].Value;
+	xpath [array.data[i].XPath]	= array.data[i].XPath_Value;
+}
+
+props.put(&quot;DATA&quot;	,data);
+props.put(&quot;XPATH&quot;	,xpath);</stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </BSFSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test Case 001: Verify Create VALID New User" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1395652849000</longProp>
+        <longProp name="ThreadGroup.end_time">1395652849000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">Test Case 001: Verify Create VALID New User</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-01: Create user successfully" enabled="true">
+          <stringProp name="TestPlan.comments">Login successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.get(&apos;${URL}&apos;);
+
+pause(5000);
+
+//click Profile button
+command.clickByXpath(xpath.BUTTON_PROFILE);
+
+//click Register button
+command.clickByXpath(xpath.BUTTON_REGISTER);
+
+var firstName = random.String(5);
+var lastName  = random.String(5);
+var email     = random.String(5) + &apos;@gmail.com&apos;;
+
+vars.put(&quot;FIRST_NAME&quot;   ,firstName);
+vars.put(&quot;LAST_NAME&quot;    ,lastName);
+vars.put(&quot;EMAIL&quot;        ,email);
+
+//input FIELD_LASTNAME
+pause(2000);
+command.findById(xpath.FIELD_LASTNAME).sendKeys(lastName);
+
+//input FIELD_FIRSTNAME
+pause(500);
+command.findById(xpath.FIELD_FIRSTNAME).sendKeys(firstName);
+
+//input FIELD_EMAIL
+pause(500);
+command.findById(xpath.FIELD_EMAIL).sendKeys(email);
+
+//input FIELD_EMAIL
+pause(500);
+command.findById(xpath.FIELD_PASSWORD).sendKeys(&apos;123456&apos;);
+
+//click REGISTER button
+pause(500);
+command.clickByXpath(xpath.BUTTON_REGISTER_NEXT);
+
+WDS.sampleResult.sampleEnd();
+
+// //verify creating successfully by checking Welcome text
+if(command.getTextByXpath(xpath.LABEL_WELCOME) != &apos;Xin chào &apos; + lastName + &apos; &apos; + firstName) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;User creating unsuccessful&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-02: Verify auto logging after creating user" enabled="true">
+          <stringProp name="TestPlan.comments">Login successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+pause(5000);
+
+//click close x button in Welcome page
+command.clickByXpath(xpath.BUTTON_CLOSE);
+
+//click Profile button
+pause(5000);
+command.clickByXpath(xpath.BUTTON_PROFILE_LOGGED_IN);
+
+WDS.sampleResult.sampleEnd();
+
+//verify LABEL_NAME after going to User Profile
+pause(5000);
+if(command.getTextByXpath(xpath.VERIFY_LABEL_NAME) != vars.get(&quot;LAST_NAME&quot;) + &apos; &apos; + vars.get(&quot;FIRST_NAME&quot;)) {
+    WDS.log.info(xpath.VERIFY_LABEL_NAME)
+    WDS.log.info(vars.get(&quot;LAST_NAME&quot;) + &apos; &apos; + vars.get(&quot;FIRST_NAME&quot;))
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;The name is not correct&apos;)
+}
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-03: Verify Email of new registed user" enabled="true">
+          <stringProp name="TestPlan.comments">Login successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+pause(5000);
+
+//verify Email of new registed user
+if(command.getTextByXpath(xpath.VERIFY_EMAIL) != vars.get(&quot;EMAIL&quot;)) {
+    WDS.log.info(command.getTextByXpath(xpath.VERIFY_EMAIL))
+    WDS.log.info(vars.get(&quot;EMAIL&quot;))
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;The email is not correct&apos;)
+}
+
+WDS.sampleResult.sampleEnd();
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-04: Verify Link of new registed user" enabled="true">
+          <stringProp name="TestPlan.comments">Login successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+pause(5000);
+
+//verify Nahi link of new registed user
+if(command.getTextByXpath(xpath.VERIFY_NAHI_LINK) != vars.get(&quot;URL&quot;) + &apos;/&apos; + vars.get(&quot;EMAIL&quot;)) {
+    WDS.log.info(command.getTextByXpath(xpath.VERIFY_NAHI_LINK))
+    WDS.log.info(vars.get(&quot;URL&quot;) + &apos;/&apos; + vars.get(&quot;EMAIL&quot;))
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;The NAHI Link is not correct&apos;)
+}
+
+WDS.sampleResult.sampleEnd();
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test Case 002: Verify Create INVALID User" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1395652849000</longProp>
+        <longProp name="ThreadGroup.end_time">1395652849000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">Test Case 002: Verify Create INVALID User</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-01: Verify registering user with blank Last Name" enabled="true">
+          <stringProp name="TestPlan.comments">Login successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.get(&apos;${URL}&apos;);
+
+pause(5000);
+
+//go to Register page
+refer.goToRegisterPage();
+
+//input data
+pause(1000);
+refer.createUser(
+    &apos;&apos;,                                 //Last Name
+    random.String(5),                   //First Name
+    random.String(5) + &apos;@gmail.com&apos;,    //Email
+    &apos;123456&apos;                            //Password
+)
+
+//click REGISTER button
+command.clickByXpath(xpath.BUTTON_REGISTER_NEXT);
+
+WDS.sampleResult.sampleEnd();
+
+//verify the error
+pause(2000);
+var actual   = command.getAttributeByXpath(xpath.ERROR_BLANK_LAST_NAME,&quot;src&quot;);
+var expected = vars.get(&quot;URL&quot;) + data.BLANK_LAST_NAME_ICON;
+if( expected != actual ) {
+    WDS.log.info(&apos;### &apos; + WDS.sampleResult.getSampleLabel() + &apos; ###&apos;)
+    WDS.log.info(&apos;### srcAttribute is                            : &apos; + actual)
+    WDS.log.info(&apos;### vars.get(&quot;URL&quot;) + data.BLANK_LAST_NAME_ICON: &apos; + expected)
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Cannot find the error icon on Last Name field&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-02: Verify registering user with blank First Name" enabled="true">
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.navigate().refresh();
+
+pause(5000);
+
+//go to Register page
+refer.goToRegisterPage();
+
+//input data
+pause(1000);
+refer.createUser(
+    random.String(5),                   //Last Name
+    &apos;&apos;,                                 //First Name
+    random.String(5) + &apos;@gmail.com&apos;,    //Email
+    &apos;123456&apos;                            //Password
+)
+
+//click REGISTER button
+command.clickByXpath(xpath.BUTTON_REGISTER_NEXT);
+
+WDS.sampleResult.sampleEnd();
+
+//verify the error
+pause(2000);
+var actual   = command.getAttributeByXpath(xpath.ERROR_BLANK_FIRST_NAME,&quot;src&quot;);
+var expected = vars.get(&quot;URL&quot;) + data.BLANK_FIRST_NAME_ICON;
+if( expected != actual ) {
+    WDS.log.info(&apos;### &apos; + WDS.sampleResult.getSampleLabel() + &apos; ###&apos;)
+    WDS.log.info(&apos;### srcAttribute is                             : &apos; + actual)
+    WDS.log.info(&apos;### vars.get(&quot;URL&quot;) + data.BLANK_FIRST_NAME_ICON: &apos; + expected)
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Cannot find the error icon on First Name field&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-03: Verify registering user with blank Email Name" enabled="true">
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.navigate().refresh();
+
+pause(5000);
+
+//go to Register page
+refer.goToRegisterPage();
+
+//input data
+pause(1000);
+refer.createUser(
+    random.String(5),                   //Last Name
+    random.String(5),                   //First Name
+    &apos;&apos;,                                 //Email
+    &apos;123456&apos;                            //Password
+)
+
+//click REGISTER button
+command.clickByXpath(xpath.BUTTON_REGISTER_NEXT);
+
+WDS.sampleResult.sampleEnd();
+
+//verify the error
+var actual   = command.getAttributeByXpath(xpath.ERROR_BLANK_EMAIL,&quot;src&quot;);
+var expected = vars.get(&quot;URL&quot;) + data.BLANK_EMAIL_ICON;
+if( expected != actual ) {
+    WDS.log.info(&apos;### &apos; + WDS.sampleResult.getSampleLabel() + &apos; ###&apos;)
+    WDS.log.info(&apos;### srcAttribute is                        : &apos; + actual)
+    WDS.log.info(&apos;### vars.get(&quot;URL&quot;) + data.BLANK_EMAIL_ICON: &apos; + expected)
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Cannot find the error icon on Email field&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-04: Verify registering user with blank Password" enabled="true">
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.navigate().refresh();
+
+pause(5000);
+
+//go to Register page
+refer.goToRegisterPage();
+
+//input data
+pause(1000);
+refer.createUser(
+    random.String(5),                   //Last Name
+    random.String(5),                   //First Name
+    random.String(5) + &apos;@gmail.com&apos;,    //Email
+    &apos;&apos;                                  //Password
+)
+
+//click REGISTER button
+command.clickByXpath(xpath.BUTTON_REGISTER_NEXT);
+
+WDS.sampleResult.sampleEnd();
+
+//verify the error
+var actual   = command.getAttributeByXpath(xpath.ERROR_BLANK_PASSWORD,&quot;src&quot;);
+var expected = vars.get(&quot;URL&quot;) + data.BLANK_PASSWORD_ICON;
+if( expected != actual ) {
+    WDS.log.info(&apos;### &apos; + WDS.sampleResult.getSampleLabel() + &apos; ###&apos;)
+    WDS.log.info(&apos;### srcAttribute is                           : &apos; + actual)
+    WDS.log.info(&apos;### vars.get(&quot;URL&quot;) + data.BLANK_PASSWORD_ICON: &apos; + expected)
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Cannot find the error icon on Password field&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-05: Verify registering user with existed user" enabled="false">
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.navigate().refresh();
+
+//go to Register page
+refer.goToRegisterPage();
+
+//input data
+pause(1000);
+refer.createUser(
+    random.String(5),                   //Last Name
+    random.String(5),                   //First Name
+    &apos;tuyetphong001@gmail.com&apos;,          //Email
+    &apos;123456&apos;                                  //Password
+)
+
+//click REGISTER button
+command.clickByXpath(xpath.BUTTON_REGISTER_NEXT);
+
+WDS.sampleResult.sampleEnd();
+
+//verify the error
+if(command.findByXpath(xpath.ERROR_BLANK_LAST_NAME).getAttribute(&quot;src&quot;) != data.BLANK_LAST_NAME_ICON) {
+    WDS.log.info(command.getTextByXpath(xpath.ERROR_BLANK_LAST_NAME))
+    WDS.log.info(command.getTextByXpath(xpath.ERROR_BLANK_LAST_NAME).getAttribute(&quot;src&quot;))
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;...&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test Case 009: Verify Create New User" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1395652849000</longProp>
+        <longProp name="ThreadGroup.end_time">1395652849000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">Test Case 001: Verify Login feature</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-01: Login successfully" enabled="false">
+          <stringProp name="TestPlan.comments">Login successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.get(&apos;${URL}&apos;);
+
+//input Username
+command.findById(xpath.USERNAME).sendKeys([data.Username]);
+
+//input Password
+command.findById(xpath.PASSWORD).sendKeys([data.Password]);
+
+//click Login button
+command.clickByXpath(xpath.LOGIN_BUTTON);
+
+WDS.sampleResult.sampleEnd();
+
+//verify login successfully by checking Welcome text
+if(command.getTextByXpath(&apos;//div[@class=&quot;content-bread-crumb&quot;]/span[1]&apos;) != &apos;Welcome Admin DORO&apos;) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Login unsuccessful&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-02: Logout successfully" enabled="false">
+          <stringProp name="TestPlan.comments">Logout successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+//click Logout button
+command.clickByXpath(xpath.LOGOUT_BUTTON);
+
+WDS.sampleResult.sampleEnd();
+
+//verify logout successfully by checking Welcome text
+if(command.getTextByXpath(xpath.FORGOT_PASSWORD) != data.ForgotPassword) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Logout unsuccessful&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-03: Login with blank Username" enabled="false">
+          <stringProp name="TestPlan.comments">Login with blank Username</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+//refresh the page
+WDS.browser.navigate().refresh();
+
+//input blank
+command.findById(xpath.USERNAME).sendKeys([&quot;&quot;]);
+
+//input Password
+command.findById(xpath.PASSWORD).sendKeys([data.Password]);
+
+//click Login button
+command.clickByXpath(xpath.LOGIN_BUTTON);
+
+WDS.sampleResult.sampleEnd();
+
+//verify error message
+if(command.getTextByXpath(xpath.LOGIN_ERROR_MESSAGE) != data.ErrorMessage) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;The error message is not correct&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-04: Login with blank Password" enabled="false">
+          <stringProp name="TestPlan.comments">Login with blank Password</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+//refresh the page
+WDS.browser.navigate().refresh();
+
+//check if the pop-up is displayed
+if(wait.until(conditions.alertIsPresent())!= null) {
+    var alert = WDS.browser.switchTo().alert();
+    alert.accept();
+}
+
+//input blank
+command.findById(xpath.USERNAME).sendKeys([data.Username]);
+
+//input Password
+command.findById(xpath.PASSWORD).sendKeys([&quot;&quot;]);
+
+//click Login button
+command.clickByXpath(xpath.LOGIN_BUTTON);
+
+WDS.sampleResult.sampleEnd();
+
+//verify error message
+if(command.getTextByXpath(xpath.LOGIN_ERROR_MESSAGE) != data.ErrorMessage) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;The error message is not correct&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-05: Login with wrong Username" enabled="false">
+          <stringProp name="TestPlan.comments">Login with wrong Username</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+//refresh the page
+WDS.browser.navigate().refresh();
+
+//check if the pop-up is displayed
+if(wait.until(conditions.alertIsPresent())!= null) {
+    var alert = WDS.browser.switchTo().alert();
+    alert.accept();
+}
+
+//input blank
+command.findById(xpath.USERNAME).sendKeys([&quot;InvalidUsername&quot;]);
+
+//input Password
+command.findById(xpath.PASSWORD).sendKeys([data.Password]);
+
+//click Login button
+command.clickByXpath(xpath.LOGIN_BUTTON);
+
+WDS.sampleResult.sampleEnd();
+
+//verify error message
+if(command.getTextByXpath(xpath.LOGIN_ERROR_MESSAGE) != data.ErrorMessage) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;The error message is not correct&apos;)
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC1-06: Login with wrong Password" enabled="false">
+          <stringProp name="TestPlan.comments">Login with wrong Password</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+//refresh the page
+WDS.browser.navigate().refresh();
+
+//check if the pop-up is displayed
+if(wait.until(conditions.alertIsPresent())!= null) {
+    var alert = WDS.browser.switchTo().alert();
+    alert.accept();
+}
+
+//input blank
+command.findById(xpath.USERNAME).sendKeys([data.Username]);
+
+//input Password
+command.findById(xpath.PASSWORD).sendKeys([&quot;InvalidPassword&quot;]);
+
+//click Login button
+command.clickByXpath(xpath.LOGIN_BUTTON);
+
+WDS.sampleResult.sampleEnd();
+
+//verify error message
+if(command.getTextByXpath(xpath.LOGIN_ERROR_MESSAGE) != data.ErrorMessage1) {
+    WDS.sampleResult.setSuccessful(false)
+    WDS.sampleResult.setResponseMessage(&apos;Expected: &apos; + data.ErrorMessage1 + &apos;&lt;br&gt;&apos; + &apos;Actual: &apos; + command.getTextByXpath(xpath.LOGIN_ERROR_MESSAGE))
+    var screenshot = WDS.browser.getScreenshotAs(pkg.OutputType.FILE);
+    screenshot.renameTo(new File(report_path + WDS.sampleResult.getSampleLabel().replace(/:.+/, &quot;&quot;) + &apos;.png&apos;));
+}</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test Case 002: Verify Creating New Users - System Admin" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1395652849000</longProp>
+        <longProp name="ThreadGroup.end_time">1395652849000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">Test Case 002: Verify Creating New Users - System Admin</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-01: Create New User - SA - Successfully" enabled="true">
+          <stringProp name="TestPlan.comments">Successfully</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+WDS.browser.get(&apos;${URL}&apos;);
+
+//login
+refer.login(data.Username,data.Password);
+
+//go to Add New User screen
+command.clickByXpath(xpath.MENU_MAIN_ITEM_USER);
+
+command.clickByXpath(xpath.MENU_SUB_ITEM_ADD);
+
+//input data
+command.findById(xpath.ADD_USER_USERNAME).sendKeys(random.String(10));
+
+command.findById(xpath.ADD_USER_FIRSTNAME).sendKeys(data.ADD_USER_FIRSTNAME + random.String(5));
+
+command.findById(xpath.ADD_USER_LASTNAME).sendKeys(data.ADD_USER_LASTNAME + random.String(5));
+
+command.findById(xpath.ADD_USER_PASSWORD).sendKeys(data.ADD_USER_PASSWORD);
+
+command.findById(xpath.ADD_USER_CONFIRM_PASSWORD).sendKeys(data.ADD_USER_CONFIRM_PASSWORD);
+
+command.findById(xpath.ADD_USER_EMAIL).sendKeys(data.ADD_USER_EMAIL);
+
+command.selectDropDownListById(xpath.ADD_USER_ROLE).selectByVisibleText(data.ADD_USER_ROLE);
+
+command.selectDropDownListById(xpath.ADD_USER_DATETIME).selectByValue(random.rangeNumber(1,3));
+
+command.selectDropDownListById(xpath.ADD_USER_TIMEZONE).selectByValue(random.rangeNumber(1,26));
+
+command.selectDropDownListById(xpath.ADD_USER_LANGUAGE).selectByValue(random.Item(1,2,3,4,9,10,11,12,13,14,15));
+
+//click Save
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();
+
+//verify login successfully by checking Welcome text
+// if(command.getTextByXpath(&apos;//div[@class=&quot;content-bread-crumb&quot;]/span[1]&apos;) != &apos;Welcome Admin DORO&apos;) {
+//     WDS.sampleResult.setSuccessful(false)
+//     WDS.sampleResult.setResponseMessage(&apos;Login unsuccessful&apos;)
+// }
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-02: Create New User - SA - Blank Username" enabled="true">
+          <stringProp name="TestPlan.comments">Blank Username</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  &apos;&apos;,                                               // Username (*)
+  data.ADD_USER_FIRSTNAME + random.String(5),       // Firstname (*)
+  data.ADD_USER_LASTNAME + random.String(5),        // Lastname (*)
+  data.ADD_USER_PASSWORD,                           // Password (*)
+  data.ADD_USER_CONFIRM_PASSWORD,                   // Confirm Password (*)
+  data.ADD_USER_EMAIL,                              // Email (*)
+  data.ADD_USER_ROLE,                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-03: Create New User - SA - Blank Firstname" enabled="true">
+          <stringProp name="TestPlan.comments">Blank Firstname</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  random.String(10),                                // Username (*)
+  &apos;&apos;,                                               // Firstname (*)
+  data.ADD_USER_LASTNAME + random.String(5),        // Lastname (*)
+  data.ADD_USER_PASSWORD,                           // Password (*)
+  data.ADD_USER_CONFIRM_PASSWORD,                   // Confirm Password (*)
+  data.ADD_USER_EMAIL,                              // Email (*)
+  data.ADD_USER_ROLE,                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-04: Create New User - SA - Blank Lastname" enabled="true">
+          <stringProp name="TestPlan.comments">Blank Lastname</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  random.String(10),                                // Username (*)
+  data.ADD_USER_FIRSTNAME + random.String(5),       // Firstname (*)
+  &apos;&apos;,                                               // Lastname (*)
+  data.ADD_USER_PASSWORD,                           // Password (*)
+  data.ADD_USER_CONFIRM_PASSWORD,                   // Confirm Password (*)
+  data.ADD_USER_EMAIL,                              // Email (*)
+  data.ADD_USER_ROLE,                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-05: Create New User - SA - Blank Password" enabled="true">
+          <stringProp name="TestPlan.comments">Blank Password</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  random.String(10),                                // Username (*)
+  data.ADD_USER_FIRSTNAME + random.String(5),       // Firstname (*)
+  data.ADD_USER_LASTNAME + random.String(5),        // Lastname (*)
+  &apos;&apos;,                                               // Password (*)
+  data.ADD_USER_CONFIRM_PASSWORD,                   // Confirm Password (*)
+  data.ADD_USER_EMAIL,                              // Email (*)
+  data.ADD_USER_ROLE,                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-06: Create New User - SA - Blank ConfirmPassword" enabled="true">
+          <stringProp name="TestPlan.comments">Blank ConfirmPassword</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  random.String(10),                                // Username (*)
+  data.ADD_USER_FIRSTNAME + random.String(5),       // Firstname (*)
+  data.ADD_USER_LASTNAME + random.String(5),        // Lastname (*)
+  data.ADD_USER_PASSWORD,                           // Password (*)
+  &apos;&apos;,                                               // Confirm Password (*)
+  data.ADD_USER_EMAIL,                              // Email (*)
+  data.ADD_USER_ROLE,                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-07: Create New User - SA - Blank Email" enabled="true">
+          <stringProp name="TestPlan.comments">Blank Email</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  random.String(10),                                // Username (*)
+  data.ADD_USER_FIRSTNAME + random.String(5),       // Firstname (*)
+  data.ADD_USER_LASTNAME + random.String(5),        // Lastname (*)
+  data.ADD_USER_PASSWORD,                           // Password (*)
+  data.ADD_USER_CONFIRM_PASSWORD,                   // Confirm Password (*)
+  &apos;&apos;,                                               // Email (*)
+  data.ADD_USER_ROLE,                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="TC2-08: Create New User - SA - Blank Role" enabled="true">
+          <stringProp name="TestPlan.comments">Blank Role</stringProp>
+          <stringProp name="WebDriverSampler.script">${__FileToString(${__P(JS_PATH,)}webdriver.js,,)}
+${__FileToString(${__P(REFER_PATH,)}references.js,,)}
+
+WDS.sampleResult.sampleStart();
+
+command.clickByXpath(xpath.MENU_DASHBOARD);         // reset page by going to Dashboard
+
+refer.goToMenu(&apos;User&apos;,&apos;Add New&apos;);                   // go to Add New User screen
+
+//input data
+refer.createUser(
+  random.String(10),                                // Username (*)
+  data.ADD_USER_FIRSTNAME + random.String(5),       // Firstname (*)
+  data.ADD_USER_LASTNAME + random.String(5),        // Lastname (*)
+  data.ADD_USER_PASSWORD,                           // Password (*)
+  data.ADD_USER_CONFIRM_PASSWORD,                   // Confirm Password (*)
+  data.ADD_USER_EMAIL,                              // Email (*)
+  &apos;&apos;,                                               // Role (*)
+  random.rangeNumber(1,3),                          // Datetime
+  random.rangeNumber(1,26),                         // Timezone
+  random.Item(1,2,3,4,9,10,11,12,13,14,15)          // Language
+)
+
+command.clickById(xpath.ADD_USER_SAVE)
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>false</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+          </value>
+        </objProp>
+        <stringProp name="filename">/Users/user/Documents/DB/Dropbox/my-work/tools/JMeter/reference/webdriver-v1.0/projects/nahi/nahi.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="Generate the report" enabled="true">
+        <stringProp name="filename"></stringProp>
+        <stringProp name="parameters"></stringProp>
+        <boolProp name="resetInterpreter">false</boolProp>
+        <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.apache.commons.io.FileUtils;
+import org.apache.jmeter.services.FileServer;
+
+String report               = props.get(&quot;REPORT&quot;);
+
+String placeholderReport    = &quot;&lt;!-- INSERT_REPORT_HERE --&gt;&quot;;
+String placeholderID        = &quot;INSERT_ID_HERE&quot;;
+String placeholderTestCase  = &quot;&lt;!-- INSERT_TEST_CASE_HERE --&gt;&quot;;
+String placeholderResult    = &quot;&lt;!-- INSERT_RESULTS_&quot;;
+
+String testCase             = prev.getThreadName();
+String testCaseName         = testCase.replaceAll(&quot;\\d+-\\d+&quot;,&quot;&quot;);
+String id                   = testCase.replaceAll(&quot;.+[^\\d-]&quot;,&quot;&quot;);
+String stepID               = prev.getSampleLabel().replaceAll(&quot;:.+&quot;, &quot;&quot;);
+String threadName           = props.get(&quot;THREAD_NAME&quot;);
+
+String time                 = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;).format(prev.getStartTime());
+String sample               = prev.getSampleLabel();
+String result               = String.valueOf(prev.isSuccessful());
+String responseMessage      = prev.getResponseMessage();
+
+String parentPath           = props.get(&quot;PARENT_PATH&quot;);
+
+public class generateReport {
+  public static void main() {
+    if (threadName.equals(testCaseName)) {
+
+      if (result.equals(&quot;true&quot;) &amp;&amp; !sample.contains(&quot;PRE - EXC&quot;)) {
+        report = report.replaceFirst(placeholderResult + id + &quot; --&gt;&quot;, &quot;&lt;tr&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + time + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + sample + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td class=\&quot;passed\&quot;&gt;&quot; + &quot;PASSED&quot; + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + &quot;&lt;/td&gt;&quot; +
+      			&quot;&lt;/tr&gt;&quot; + placeholderResult + id + &quot; --&gt;&quot;);
+      }
+
+      if (result.equals(&quot;false&quot;) &amp;&amp; !sample.contains(&quot;PRE - EXC&quot;)) {
+        report = report.replaceAll(placeholderResult + id + &quot; --&gt;&quot;, &quot;&lt;tr data-toggle=&apos;collapse&apos; data-parent=&apos;#&apos; href=&apos;#&quot; + stepID + &quot;&apos;&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + time + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + sample + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td class=\&quot;failed\&quot;&gt;&quot; + &quot;FAILED&quot; + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + responseMessage + &quot;&lt;/td&gt;&quot; +
+      			&quot;&lt;/tr&gt;&quot; +
+            &quot;&lt;tr&gt;&quot; +
+              &quot;&lt;td colspan=&apos;4&apos;&gt;&quot; +
+                &quot;&lt;img id=&apos;&quot; + stepID + &quot;&apos; class=&apos;panel-collapse collapse&apos; src=&apos;&quot; + stepID + &quot;.png&apos; alt=&apos;IMAGE NOT FOUND&apos; style=&apos;width:100%;height:100%;&apos;&gt;&lt;/img&gt;&quot; +
+              &quot;&lt;/td&gt;&quot; +
+            &quot;&lt;/tr&gt;&quot; +
+            placeholderResult + id + &quot; --&gt;&quot;);
+      }
+    }
+
+    if (!threadName.equals(testCaseName) &amp;&amp; !testCaseName.contains(&quot;Setup: Main Actions Before&quot;)) {
+
+      String report_data_path = parentPath + &quot;templates&quot; + File.separator + &quot;report_data.html&quot;;
+      String report_data      = FileUtils.readFileToString(new File(report_data_path));
+
+      threadName  = testCaseName;
+
+      report_data = report_data.replaceAll(placeholderID, id);
+      report_data = report_data.replaceFirst(placeholderTestCase, threadName);
+      report      = report.replaceAll(placeholderReport, report_data + placeholderReport);
+
+      if (result.equals(&quot;true&quot;) &amp;&amp; !sample.contains(&quot;PRE - EXC&quot;)) {
+        report = report.replaceFirst(placeholderResult + id + &quot; --&gt;&quot;, &quot;&lt;tr&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + time + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + sample + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td class=\&quot;passed\&quot;&gt;&quot; + &quot;PASSED&quot; + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + &quot;&lt;/td&gt;&quot; +
+      			&quot;&lt;/tr&gt;&quot; + placeholderResult + id + &quot; --&gt;&quot;);
+      }
+
+      if (result.equals(&quot;false&quot;) &amp;&amp; !sample.contains(&quot;PRE - EXC&quot;)) {
+        report = report.replaceAll(placeholderResult + id + &quot; --&gt;&quot;, &quot;&lt;tr data-toggle=&apos;collapse&apos; data-parent=&apos;#&apos; href=&apos;#&quot; + stepID + &quot;&apos;&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + time + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + sample + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td class=\&quot;failed\&quot;&gt;&quot; + &quot;FAILED&quot; + &quot;&lt;/td&gt;&quot; +
+      			  &quot;&lt;td&gt;&quot; + responseMessage + &quot;&lt;/td&gt;&quot; +
+      			&quot;&lt;/tr&gt;&quot; +
+            &quot;&lt;tr&gt;&quot; +
+              &quot;&lt;td colspan=&apos;4&apos;&gt;&quot; +
+                &quot;&lt;img id=&apos;&quot; + stepID + &quot;&apos; class=&apos;panel-collapse collapse&apos; src=&apos;&quot; + stepID + &quot;.png&apos; alt=&apos;IMAGE NOT FOUND&apos; style=&apos;width:100%;height:100%;&apos;&gt;&lt;/img&gt;&quot; +
+              &quot;&lt;/td&gt;&quot; +
+            &quot;&lt;/tr&gt;&quot; +
+            placeholderResult + id + &quot; --&gt;&quot;);
+      }
+    }
+  }
+}
+
+generateReport.main();
+
+String currentDate = props.get(&quot;DATE&quot;);
+
+public class date {
+	public static void main() {
+		if (currentDate.equals(&quot;&quot;)) {
+			currentDate = new SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;).format(new Date());
+		}
+	}
+}
+//runs date.main()
+date.main();
+
+//get PROJECT PATH and save the report into REPORT folder
+String projectPath	= vars.get(&quot;PATH&quot;);
+String reportPath 	= projectPath + File.separator + &quot;report&quot; + File.separator + &quot;report_&quot; + currentDate + &quot;.html&quot;;
+
+FileUtils.writeStringToFile(new File(reportPath),report,&quot;UTF-8&quot;);
+
+props.put(&quot;THREAD_NAME&quot;, threadName);
+props.put(&quot;REPORT&quot;     , report);				// store into REPORT again for next Sampler(loop)
+props.put(&quot;DATE&quot;       , currentDate);			// store into DATE again for next Sampler(loop)
+</stringProp>
+      </BeanShellListener>
+      <hashTree/>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>

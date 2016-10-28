@@ -1,0 +1,8 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,grpThreads,allThreads,Latency,IdleTime
+1477452358581,1050,ClinicLogin,200,,Thread Group 1-1,text,true,,361,1,1,1050,0
+1477452359704,905,PatienList,200,,Thread Group 1-1,text,true,,758470,1,1,361,0
+1477452360664,294,Send Message,200,,Thread Group 1-1,text,true,,189,1,1,294,0
+1477452391635,408,ClinicLogin,200,,Thread Group 1-1,text,true,,361,1,1,408,0
+1477452392044,1574,PatienList,200,,Thread Group 1-1,text,true,,758470,1,1,367,0
+1477452393645,0,Send Message,Non HTTP response code: java.net.URISyntaxException,Non HTTP response message: Illegal character in query at index 111: https://app.carereach.net/clinic/patient-list/send-message?auth_token=280ef5e704b7463099f86d12faf8eb0e&hpp_id=${HPP_ID},Thread Group 1-1,text,false,,1108,1,1,0,0
+1477452393653,15,Debug Sampler,200,OK,Thread Group 1-1,text,true,,36088,1,1,0,0
