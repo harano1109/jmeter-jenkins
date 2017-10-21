@@ -1,0 +1,54 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1508060394377,2080,OSCM - EXC - 0010 - setUp OS Command,200,OK,setUp Thread Group 1-1,text,true,,4,0,1,1,0,0,0
+1508060396641,46,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-1,text,true,,0,0,1,1,0,0,0
+1508060396764,5,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-2,text,true,,0,0,2,2,0,0,0
+1508060396687,83,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-1,text,true,,0,0,2,2,0,0,0
+1508060396770,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-2,text,true,,0,0,2,2,0,0,0
+1508060396861,126,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-3,text,true,,0,0,4,4,0,0,0
+1508060396962,25,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-4,text,true,,0,0,4,4,0,0,0
+1508060396987,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-3,text,true,,0,0,4,4,0,0,0
+1508060396987,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-4,text,true,,0,0,4,4,0,0,0
+1508060396989,8,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-3,text,true,,0,0,4,4,0,0,0
+1508060396772,226,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-2,text,true,,0,0,4,4,0,0,0
+1508060396989,9,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-4,text,true,,0,0,4,4,0,0,0
+1508060396770,267,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-1,text,true,,0,0,4,4,0,0,0
+1508060397062,201,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-5,text,true,,0,0,7,7,0,0,0
+1508060397165,98,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-6,text,true,,0,0,7,7,0,0,0
+1508060397262,1,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-7,text,true,,0,0,7,7,0,0,0
+1508060397263,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-5,text,true,,0,0,7,7,0,0,0
+1508060397266,12,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-5,text,true,,0,0,7,7,0,0,0
+1508060397263,16,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-6,text,true,,0,0,7,7,0,0,0
+1508060397279,1,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-6,text,true,,0,0,7,7,0,0,0
+1508060397263,17,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-7,text,true,,0,0,7,7,0,0,0
+1508060397280,2,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-7,text,true,,0,0,7,7,0,0,0
+1508060397366,0,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-8,text,true,,0,0,8,8,0,0,0
+1508060397367,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-8,text,true,,0,0,8,8,0,0,0
+1508060397369,1,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-8,text,true,,0,0,8,8,0,0,0
+1508060397279,122,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-5,text,true,,357,0,8,8,0,0,0
+1508060397370,31,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-8,text,true,,357,0,8,8,0,0,0
+1508060396998,403,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-2,text,true,,357,0,8,8,0,0,0
+1508060397037,365,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-1,text,true,,357,0,7,7,0,0,0
+1508060396999,403,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-4,text,true,,357,0,7,7,0,0,0
+1508060397283,120,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-7,text,true,,357,0,7,7,0,0,0
+1508060396998,405,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-3,text,true,,357,0,7,7,0,0,0
+1508060397280,123,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-6,text,true,,357,0,6,6,0,0,0
+1508060397402,76,SEAR - 0010 Search Items,200,OK,Thread Group 1-5,text,true,,114,0,7,7,12,0,5
+1508060397571,17,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-10,text,true,,0,0,7,7,0,0,0
+1508060397464,124,PROF - 0010 - EXC - NormalTraffic,200,OK,Thread Group 1-9,text,true,,0,0,7,7,0,0,0
+1508060397589,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-10,text,true,,0,0,7,7,0,0,0
+1508060397589,2,PROF - 0020 - EXC - Random main action,200,OK,Thread Group 1-9,text,true,,0,0,7,7,0,0,0
+1508060397591,1,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-10,text,true,,0,0,7,7,0,0,0
+1508060397591,2,FTUT - 0010 - EXC - JSR223 Sampler - FunctionUtils,200,OK,Thread Group 1-9,text,true,,0,0,7,7,0,0,0
+1508060397592,4,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-10,text,true,,357,0,7,7,0,0,0
+1508060397593,3,LPDT - 0010 - EXC - JSR223 Sampler - Load PRODUCTS_DATA,200,,Thread Group 1-9,text,true,,357,0,7,7,0,0,0
+1508060397405,359,AUTH - 0010 - Authenticated users browsing website,200,OK,Thread Group 1-7,text,true,,114,0,6,6,38,0,3
+1508060397759,55,ANON - 0010 - Anonymous users browsing website,200,OK,Thread Group 1-6,text,true,,114,0,6,6,47,0,2
+1508060397406,433,SEAR - 0010 Search Items,200,OK,Thread Group 1-3,text,true,,114,0,5,5,23,0,2
+1508060397759,404,ANON - 0010 - Anonymous users browsing website,200,OK,Thread Group 1-10,text,true,,114,0,4,4,50,0,5
+1508060397759,442,ANON - 0010 - Anonymous users browsing website,200,OK,Thread Group 1-1,text,true,,114,0,4,4,25,0,2
+1508060397765,464,CART - 0010 - Add to Cart,200,OK,Thread Group 1-7,text,true,,114,0,3,3,16,0,3
+1508060397760,482,ANON - 0010 - Anonymous users browsing website,200,OK,Thread Group 1-2,text,true,,114,0,3,3,40,0,5
+1508060398166,200,AUTH - 0010 - Authenticated users browsing website,200,OK,Thread Group 1-10,text,true,,114,0,3,3,15,0,2
+1508060398230,472,CART - 0020 - Change Quatity,200,OK,Thread Group 1-7,text,true,,114,0,2,2,44,0,3
+1508060398243,483,AUTH - 0010 - Authenticated users browsing website,200,OK,Thread Group 1-2,text,true,,114,0,1,1,14,0,4
+1508060398730,43,OSCM - EXC - 0010 - tearDown OS Command,200,OK,tearDown Thread Group 1-1,text,true,,30,0,1,1,0,0,0
